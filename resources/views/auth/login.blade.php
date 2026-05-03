@@ -21,6 +21,7 @@
                 Ghi nho dang nhap
             </label>
             <button class="primary-button wide" type="submit">Dang nhap</button>
+            <a class="outline-button wide" href="{{ route('auth.google.redirect') }}">Dang nhap bang Google</a>
             <p class="auth-note">Chua co tai khoan? <a href="{{ route('register') }}">Dang ky ngay</a></p>
         </form>
     </section>
