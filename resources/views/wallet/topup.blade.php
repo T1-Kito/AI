@@ -13,7 +13,7 @@
                     <h2>Nap tien tu dong qua ngan hang</h2>
                     <p>He thong se tu dong cong so du ngay khi webhook xac nhan giao dich thanh cong.</p>
                 </div>
-                <span class="badge-soft">Toi thieu 20.000d</span>
+                <span class="badge-soft">Nap linh hoat theo nhu cau</span>
             </div>
 
             <form id="topup-form" class="topup-card modern-card" method="POST" action="{{ route('wallet.store') }}">
@@ -32,10 +32,10 @@
 
                 <label class="field-label" for="topup-amount">So tien nap</label>
                 <div class="topup-line modern-line">
-                    <input id="topup-amount" name="amount" type="number" min="20000" step="1000" value="{{ old('amount', $suggestedAmount) }}" required>
+                    <input id="topup-amount" name="amount" type="number" min="1" step="1" value="{{ old('amount', $suggestedAmount) }}" required>
                     <button id="create-topup-btn" class="primary-button" type="submit">Tao giao dich</button>
                 </div>
-                <small>Vi du: 20.000d, 50.000d, 100.000d. Ban can chuyen dung noi dung de he thong doi chieu.</small>
+                <small>Ban co the nap so tien bat ky. Vui long chuyen dung noi dung de he thong doi chieu.</small>
                 <p id="topup-error" class="form-error" hidden></p>
             </form>
 
@@ -200,8 +200,8 @@
                 clearError();
 
                 const amount = Number.parseInt(amountInput.value, 10);
-                if (!amount || amount < 20000) {
-                    showError('So tien toi thieu la 20.000d.');
+                if (!amount || amount < 1) {
+                    showError('So tien nap phai lon hon 0.');
                     return;
                 }
 

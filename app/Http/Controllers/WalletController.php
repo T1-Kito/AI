@@ -32,7 +32,7 @@ class WalletController extends Controller
         abort_if($request->user()->is_admin, 403);
 
         $data = $request->validate([
-            'amount' => ['required', 'integer', 'min:20000', 'max:50000000'],
+            'amount' => ['required', 'integer', 'min:1', 'max:50000000'],
             'method' => ['required', 'in:bank,crypto'],
         ]);
 
